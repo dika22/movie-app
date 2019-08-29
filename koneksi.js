@@ -1,2 +1,2 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/movies_app',{ useNewUrlParser: true });
+mongoose.connect('mongodb://'+process.env.HOST+':'+process.env.PORT_DB+'/'+process.env.DB,{ useNewUrlParser: true });
