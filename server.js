@@ -8,7 +8,7 @@ let express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var routes = require('./routes');
+let routes = require('./routes');
 routes(app);
 
 app.listen(process.env.PORT);

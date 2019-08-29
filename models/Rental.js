@@ -7,7 +7,9 @@ const schemaOption = {
 let RentalSchema = new mongoose.Schema({  
   	idUser: String,
   	idMovie: String,
-  	rentalDate: String
+  	priceRentail : String,
+  	rentalDate: String,
+  	dateFinish : String
 },schemaOption);
 
 let Rental = mongoose.model('Rental',RentalSchema);
