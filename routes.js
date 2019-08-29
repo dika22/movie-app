@@ -13,6 +13,9 @@ module.exports = function(app) {
     /*Register User*/
     app.route('/v1/api/appmovie/adduser')
         .post(todoUser.addUser);
+    /*get detail user */
+    app.route('/v1/api/appmovie/detailuser/:idx')
+        .get(todoUser.findDetailUser);    
     /*get id user update*/
     app.route('/v1/api/appmovie/userupdateid/:idx')
         .get(todoUser.updateUserId);
@@ -27,6 +30,9 @@ module.exports = function(app) {
         .post(todoList.addMovie);
     app.route('/v1/api/appmovie/allmovie/:token')
         .get(todoList.allMovie); 
+    /*get detail movie */
+    app.route('/v1/api/appmovie/detailmovie/:idx')
+        .get(todoList.findDetailMovie);
     /*get id movie update*/
     app.route('/v1/api/appmovie/movieupdateid/:idx')
         .get(todoList.updateMovieId);

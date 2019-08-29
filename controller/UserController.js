@@ -28,6 +28,17 @@ exports.addUser = function(req, res) {
     
 };
 
+exports.findDetailUser = function(req, res) {
+    let id = req.params.idx;
+    userModel.findOne({_id : id}).exec(function(err,respon){
+        if (respon === null) {
+            res.json({status : 404, message : 'User Not Found'})
+        }else{
+            res.json({status : 200, value : respon})
+        }
+    })
+};
+
 exports.updateUserId = function(req, res) {
     let id = req.params.idx;
 

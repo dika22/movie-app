@@ -18,6 +18,17 @@ exports.addMovie = function(req, res) {
      });
 };
 
+exports.findDetailMovie = function(req, res) {
+    let id = req.params.idx;
+    movieModel.findOne({_id : id}).exec(function(err,respon){
+        if (respon === null) {
+            res.json({status : 404, message : 'Movie Not Found'})
+        }else{
+            res.json({status : 200, value : respon})
+        }
+    })
+};
+
 exports.updateMovieId = function(req, res) {
     let id = req.params.idx;
 
